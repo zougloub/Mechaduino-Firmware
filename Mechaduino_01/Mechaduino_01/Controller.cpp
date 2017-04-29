@@ -107,8 +107,7 @@ void TC5_Handler() {                // gets called with FPID frequency
       if (abs(e) < 0.1) ledPin_HIGH();    // turn on LED if error is less than 0.1
       else ledPin_LOW();                  //digitalWrite(ledPin, LOW);
 
-
-      output(-y, round(U));    // update phase currents
+      output(-y, U);    // update phase currents
     }
     
    // e_3 = e_2;    //copy current values to previous values for next control cycle

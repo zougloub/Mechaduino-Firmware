@@ -86,7 +86,7 @@ void enableInterrupt() {            //enable pin interrupt handler
     }
 }
 
-void output(float theta, int effort) {
+void output(float theta, float effort) {
    int angle_1;
    int angle_2;
    int v_coil_A;
@@ -101,8 +101,8 @@ void output(float theta, int effort) {
   angle_1 = mod((phase_multiplier * theta) , 3600);   //
   angle_2 = mod((phase_multiplier * theta)+900 , 3600);
   
-  sin_coil_A  = sin_1[angle_1];
 
+  sin_coil_A = sin_1[angle_1];
   sin_coil_B = sin_1[angle_2];
 
   v_coil_A = ((effort * sin_coil_A) / 1024);
